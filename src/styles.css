@@ -1,0 +1,16 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.card{
+  /* background-color: bisque; */
+  width: 25%;
+}

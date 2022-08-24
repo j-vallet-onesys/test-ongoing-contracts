@@ -1,0 +1,63 @@
+<div class="cont">
+  <div
+    echarts
+    [options]="options$ | async"
+    class="demo-chart"
+    style="width: 1000px; height: 600px"
+  ></div>
+  <div class="options">
+    <mat-card>
+      <mat-card-title>Options</mat-card-title>
+      <form [formGroup]="form" class="container">
+        <div>
+          <label>Légende</label>
+          <mat-radio-group [formControl]="form.controls.legend">
+            <mat-radio-button value="none">Aucune</mat-radio-button>
+            <mat-radio-button value="top">En haut</mat-radio-button>
+            <mat-radio-button value="right">A droite</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <mat-checkbox [formControl]="form.controls.showLabel"
+          >Afficher le libellé</mat-checkbox
+        >
+        <div>
+          <label>Taille</label>
+          <mat-slider
+            [formControl]="form.controls.minSize"
+            min="0"
+            max="70"
+          ></mat-slider>
+          <mat-slider
+            [formControl]="form.controls.maxSize"
+            min="30"
+            max="100"
+          ></mat-slider>
+        </div>
+        <mat-checkbox [formControl]="form.controls.rounded"
+          >Bords arrondit</mat-checkbox
+        >
+        <div>
+          <label>Taille en fonctione du volume</label>
+          <div>
+            <mat-radio-group [formControl]="form.controls.roseType">
+              <mat-radio-button value="none">Non</mat-radio-button>
+              <mat-radio-button value="area">Aire</mat-radio-button>
+              <mat-radio-button value="angle">Epaisseur</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        <mat-checkbox [formControl]="form.controls.showPercent"
+          >Afficher le pourcentage</mat-checkbox
+        >
+        <div *ngIf="form.controls.showPercent.value">
+          <label>Décimales : {{ form.controls.decimals.value }}</label>
+          <mat-slider
+            [formControl]="form.controls.decimals"
+            min="0"
+            max="2"
+          ></mat-slider>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>

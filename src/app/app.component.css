@@ -1,0 +1,13 @@
+.cont {
+  display: flex;
+  justify-content: space-around;
+}
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+form > * {
+  margin: 5px 0;
+}
+.mat-radio-button {
+  margin: 0 12px;
+}
